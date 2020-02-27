@@ -1,12 +1,10 @@
 module.exports = function createDreamTeam(members) {
   let newArr = [];
-  if (typeof members === "number" || {}.toString.call(members) === "[object Object]" || members === undefined || members === null || members.length == 0 || members === false) {
+  if ({}.toString.call(members) !== "[object Array]") {
     return false;
   }
   members.forEach(function(word) {
-    if (typeof word === "number" || {}.toString.call(word) === "[object Object]" || {}.toString.call(word) === "[object Set]" || word === undefined || word === null || word === false || word === true || typeof word === "object") {
-      let x = 1;
-    } else {
+    if (typeof word === "string") {
       let a = word.toUpperCase().trim();
       return newArr.push(a[0]);
     }
